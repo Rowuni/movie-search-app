@@ -1,99 +1,99 @@
 # 🎬 Movie Search App
 
-Une application moderne de recherche de films construite avec React, TypeScript et l'API OMDB.
+A modern movie search application built with React, TypeScript and the OMDB API.
 
-## ✨ Fonctionnalités
+## ✨ Features
 
 ### Core Features
-- 🔍 **Recherche de films** : Recherche instantanée via l'API OMDB
-- 📄 **Détails des films** : Page dédiée avec informations complètes
-- ⭐ **Système de favoris** : Ajout/suppression avec persistance localStorage
-- 📱 **Design responsive** : Interface adaptée mobile et desktop
+- 🔍 **Movie Search**: Instant search via OMDB API
+- 📄 **Movie Details**: Dedicated page with complete information
+- ⭐ **Favorites System**: Add/remove with localStorage persistence
+- 📱 **Responsive Design**: Mobile and desktop optimized interface
 
-### Fonctionnalités Avancées
-- 🎯 **Filtres intelligents** : Par année et type (Film/Série/Épisode)
-- 📊 **Pagination** : Navigation par pages + bouton "Load More"
-- 🌓 **Thème Dark/Light** : Basculement avec sauvegarde des préférences
-- 🎨 **Interface moderne** : Animations, gradients, glassmorphism
+### Advanced Features
+- 🎯 **Smart Filters**: By year and type (Movie/Series/Episode)
+- 📊 **Pagination**: Page navigation + "Load More" button
+- 🌓 **Dark/Light Theme**: Toggle with preference saving
+- 🎨 **Modern Interface**: Animations, gradients, glassmorphism
 
 ## 🛠️ Technologies
 
-- **Frontend** : React 18 + TypeScript
-- **Build** : Vite 
-- **Routing** : React Router v6
-- **State Management** : React Context (useContext)
-- **Styling** : CSS moderne avec variables et animations
-- **API** : OMDB API pour les données de films
+- **Frontend**: React 18 + TypeScript
+- **Build**: Vite 
+- **Routing**: React Router v6
+- **State Management**: React Context (useContext)
+- **Styling**: Modern CSS with variables and animations
+- **API**: OMDB API for movie data
 
 ## 🚀 Installation
 
-1. **Cloner le projet**
+1. **Clone the project**
 ```bash
-git clone <url-du-repo>
+git clone <repo-url>
 cd movie-search-app
 ```
 
-2. **Installer les dépendances**
+2. **Install dependencies**
 ```bash
 npm install
 ```
 
-3. **Configurer l'API**
+3. **Configure the API**
 ```bash
 Replace API_KEY_HERE with your API key in the .env file
 ```
 > You can get your API key here [http://www.omdbapi.com/apikey.aspx](http://www.omdbapi.com/apikey.aspx)
 
-4. **Démarrer l'application**
+4. **Start the application**
 ```bash
 npm run dev
 ```
 
-## 📁 Structure du Projet
+## 📁 Project Structure
 
 ```
 src/
-├── components/          # Composants réutilisables
-│   ├── FavoriteButton/  # Bouton favoris avec animations
-│   ├── FiltersBar/      # Filtres par année/type
-│   ├── MovieList/       # Grille de films avec états
-│   ├── Pagination/      # Navigation des pages
-│   ├── SearchBar/       # Barre de recherche
-│   └── ThemeToggle/     # Basculeur de thème
-├── contexts/            # Gestion d'état globale
-│   ├── FavoritesContext.tsx  # Contexte des favoris
-│   ├── SearchContext.tsx     # Contexte de recherche
-│   └── ThemeContext.tsx      # Contexte du thème
-├── pages/              # Pages principales
-│   ├── Home/           # Page d'accueil avec recherche
-│   ├── Favorites/      # Page des favoris
-│   └── MovieDetails/   # Page de détails d'un film
-└── services/           # Services API
-    └── movieService.ts # Interface avec OMDB API
+├── components/          # Reusable components
+│   ├── FavoriteButton/  # Favorite button with animations
+│   ├── FiltersBar/      # Filters by year/type
+│   ├── MovieList/       # Movie grid with states
+│   ├── Pagination/      # Page navigation
+│   ├── SearchBar/       # Search bar
+│   └── ThemeToggle/     # Theme toggle
+├── contexts/            # Global state management
+│   ├── FavoritesContext.tsx  # Favorites context
+│   ├── SearchContext.tsx     # Search context
+│   └── ThemeContext.tsx      # Theme context
+├── pages/              # Main pages
+│   ├── Home/           # Home page with search
+│   ├── Favorites/      # Favorites page
+│   └── MovieDetails/   # Movie details page
+└── services/           # API services
+    └── movieService.ts # OMDB API interface
 ```
 
 ## 🎯 Architecture
 
-L'application utilise **React Context** pour la gestion d'état globale :
+The application uses **React Context** for global state management:
 
-- **FavoritesContext** : Gestion des favoris avec localStorage
-- **SearchContext** : État de recherche, pagination et filtres  
-- **ThemeContext** : Thème sombre/clair avec persistance
+- **FavoritesContext**: Favorites management with localStorage
+- **SearchContext**: Search state, pagination and filters  
+- **ThemeContext**: Dark/light theme with persistence
 
-## 📱 Utilisation
+## 📱 Usage
 
-1. **Rechercher** : Saisir un titre de film dans la barre de recherche
-2. **Filtrer** : Utiliser les filtres par année et type
-3. **Favoris** : Cliquer sur l'étoile pour ajouter/supprimer des favoris
-4. **Navigation** : Parcourir les pages ou utiliser "Load More"
-5. **Thème** : Basculer entre mode clair et sombre
-6. **Détails** : Cliquer sur un film pour voir ses détails complets
+1. **Search**: Enter a movie title in the search bar
+2. **Filter**: Use filters by year and type
+3. **Favorites**: Click the star to add/remove favorites
+4. **Navigation**: Browse pages or use "Load More"
+5. **Theme**: Switch between light and dark mode
+6. **Details**: Click on a movie to see its complete details
 
-## 🔧 Scripts Disponibles
+## 🔧 Available Scripts
 
 ```bash
-npm run dev      # Démarrer en mode développement
-npm run build    # Construire pour la production  
-npm run preview  # Prévisualiser le build de production
-npm run lint     # Lancer ESLint
+npm run dev      # Start in development mode
+npm run build    # Build for production  
+npm run preview  # Preview production build
+npm run lint     # Run ESLint
 ```
