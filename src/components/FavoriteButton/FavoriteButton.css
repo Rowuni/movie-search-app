@@ -1,0 +1,137 @@
+.favorite-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.favorite-button:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+.favorite-button.active {
+  background: rgba(255, 193, 7, 0.9);
+  border-color: rgba(255, 193, 7, 0.5);
+}
+
+.favorite-button.active:hover {
+  background: rgba(255, 193, 7, 1);
+  transform: scale(1.1);
+}
+
+/* Sizes */
+.favorite-button.small {
+  width: 32px;
+  height: 32px;
+  top: 8px;
+  right: 8px;
+}
+
+.favorite-button.small .favorite-icon {
+  font-size: 0.9rem;
+}
+
+.favorite-button.medium {
+  width: 40px;
+  height: 40px;
+  top: 12px;
+  right: 12px;
+}
+
+.favorite-button.medium .favorite-icon {
+  font-size: 1.1rem;
+}
+
+.favorite-button.large {
+  width: 48px;
+  height: 48px;
+  top: 16px;
+  right: 16px;
+}
+
+.favorite-button.large .favorite-icon {
+  font-size: 1.3rem;
+}
+
+/* Button with text */
+.favorite-button:has(.favorite-text) {
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  position: relative;
+  width: auto;
+  height: auto;
+  top: auto;
+  right: auto;
+}
+
+.favorite-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.favorite-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  width: 100%;
+  height: 100%;
+}
+
+/* Pour les boutons circulaires sans texte, on enlève le gap */
+.favorite-button:not(:has(.favorite-text)) {
+  gap: 0;
+}
+
+/* Correction pour les navigateurs qui ne supportent pas :has() */
+.favorite-button.small,
+.favorite-button.medium,
+.favorite-button.large {
+  gap: 0;
+}
+
+/* Animations */
+.favorite-button.active .favorite-icon {
+  animation: heartbeat 0.6s ease-in-out;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Dark theme support */
+[data-theme="dark"] .favorite-button {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+[data-theme="dark"] .favorite-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 255, 255, 0.4);
+}

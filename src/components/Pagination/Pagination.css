@@ -1,0 +1,233 @@
+.pagination-container {
+  margin: 2rem 0;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.pagination-info {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  background: white;
+  border: 2px solid rgba(0, 123, 255, 0.2);
+  border-radius: 10px;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+  justify-content: center;
+}
+
+.pagination-btn:hover:not(.disabled) {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+.pagination-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: #f8f9fa;
+  color: #6c757d;
+}
+
+.pagination-btn span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 1rem;
+}
+
+.pagination-page {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(0, 123, 255, 0.2);
+  border-radius: 50%;
+  background: white;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-page:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.pagination-page.active {
+  background: linear-gradient(135deg, var(--primary-color), #0056b3);
+  color: white;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.pagination-ellipsis {
+  padding: 0 0.5rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  user-select: none;
+}
+
+.load-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color), #0056b3);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 1rem auto;
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+.load-more-btn:hover {
+  background: linear-gradient(135deg, #0056b3, var(--primary-color));
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4);
+}
+
+.load-more-btn:active {
+  transform: translateY(-1px);
+}
+
+.load-more-icon {
+  font-size: 1.1rem;
+  animation: bounce 2s infinite;
+}
+
+/* Dark theme support */
+[data-theme="dark"] .pagination-btn {
+  background: #2c2c2c;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #64b5f6;
+}
+
+[data-theme="dark"] .pagination-btn:hover:not(.disabled) {
+  background: #64b5f6;
+  color: #1a1a1a;
+  border-color: #64b5f6;
+}
+
+[data-theme="dark"] .pagination-btn.disabled {
+  background: #1a1a1a;
+  color: #666;
+}
+
+[data-theme="dark"] .pagination-page {
+  background: #2c2c2c;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #64b5f6;
+}
+
+[data-theme="dark"] .pagination-page:hover {
+  background: #64b5f6;
+  color: #1a1a1a;
+}
+
+[data-theme="dark"] .pagination-page.active {
+  background: linear-gradient(135deg, #64b5f6, #42a5f5);
+  color: #1a1a1a;
+}
+
+[data-theme="dark"] .pagination-info {
+  color: #aaa;
+}
+
+[data-theme="dark"] .pagination-ellipsis {
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pagination {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pagination-pages {
+    margin: 0;
+    order: -1;
+  }
+
+  .pagination-btn {
+    min-width: 100px;
+  }
+
+  .load-more-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-pages {
+    gap: 0.1rem;
+  }
+  
+  .pagination-page {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-3px);
+  }
+  60% {
+    transform: translateY(-1px);
+  }
+}
