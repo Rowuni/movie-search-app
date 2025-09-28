@@ -40,10 +40,9 @@ npm install
 
 3. **Configurer l'API**
 ```bash
-# Créer un fichier .env à la racine
-echo "VITE_OMDB_API_KEY=your_api_key_here" > .env
+Replace API_KEY_HERE with your API key in the .env file
 ```
-> Obtenir une clé API gratuite sur [http://www.omdbapi.com/apikey.aspx](http://www.omdbapi.com/apikey.aspx)
+> You can get your API key here [http://www.omdbapi.com/apikey.aspx](http://www.omdbapi.com/apikey.aspx)
 
 4. **Démarrer l'application**
 ```bash
