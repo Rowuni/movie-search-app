@@ -29,7 +29,7 @@ A modern movie search application built with React, TypeScript and the OMDB API.
 
 1. **Clone the project**
 ```bash
-git clone <repo-url>
+git clone [<repo-url>](https://github.com/Rowuni/movie-search-app.git)
 cd movie-search-app
 ```
 
